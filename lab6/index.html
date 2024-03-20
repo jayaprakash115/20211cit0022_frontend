@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+    <style>
+        .alert{
+            color: red;
+            display: none;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var firstName = document.forms["studentRegistration"]["firstName"].value;
+            var lastName = document.forms["studentRegistration"]["lastName"].value;
+            var email = document.forms["studentRegistration"]["email"].value;
+            var password = document.forms["studentRegistration"]["password"].value;
+            var address = document.forms["studentRegistration"]["address"].value;
+            var mobileNumber = document.forms["studentRegistration"]["mobileNumber"].value;
+            var gender = document.forms["studentRegistration"]["gender"].value;
+            let firstNameAlert=document.getElementById("firstNameAlert");
+            let lastNameAlert=document.getElementById("lastNameAlert");
+            let emailAlert=document.getElementById("emailNameAlert");
+            let passwordAlert=document.getElementById("passwordAlert");
+            let addressAlert=document.getElementById("addressAlert");
+            let mobileAlert=document.getElementById("mobileAlert");
+            let genderAlert=document.getElementById("genderAlert");
+
+            if (firstName === "" || firstName.length < 6 || !/^[a-zA-Z]+$/.test(firstName)) {
+                firstNameAlert.style.display="block";
+                return false;
+            }
+
+            if (lastName === "" ||firstName.length < 6 || !/^[a-zA-Z]+$/.test(lastName)) {
+                lastNameAlert.style.display="block";
+                return false;
+            }else {
+                lastNameAlert.style.display="none";
+            }
+
+            if (email === "" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                emailAlert.style.display="block";
+                return false;
+            }
+
+            if (password === "" || password.length < 6 || !/^[a-zA-Z0-9]+$/.test(password)) {
+                passwordAlert.style.display="block";
+                return false;
+            }
+
+            if (address === "") {
+                addressAlert.style.display="block";
+                return false;
+            }
+
+            if (mobileNumber === "" || mobileNumber.length !== 10 || !/^\d+$/.test(mobileNumber)) {
+                mobileAlert.style.display="block";
+                return false;
+            }
+
+            if (gender === "") {
+                genderAlert.style.display="block";
+                return false;
+            }
+
+            alert("Registration done successfully");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form name="studentRegistration" onsubmit="return validateForm()">
+        <label for="firstName">First Name:</label><br>
+        <input type="text" id="firstName" name="firstName">
+        <span id="firstNameAlert" class="alert">Invalid first name</span><br>
+
+        <label for="lastName">Last Name:</label><br>
+        <input type="text" id="lastName" name="lastName"><br>
+        <span id="lastNameAlert" class="alert">Invalid last name</span><br>
+
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email"><br>
+        <span id="emailNameAlert" class="alert">Invalid email id</span><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br>
+        <span id="passwordAlert" class="alert">Invalid password</span><br>
+
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address"><br>
+        <span id="addressAlert" class="alert">Address should not be empty</span><br>
+
+        <label for="mobileNumber">Mobile Number:</label><br>
+        <input type="text" id="mobileNumber" name="mobileNumber"><br>
+        <span id="mobileAlert" class="alert">Invalid mobile number</span><br>
+
+        <label for="gender">Gender:</label><br>
+        <select id="gender" name="gender">
+            <option value="">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select><br>
+        <span id="genderAlert" class="alert">Gender should not be empty</span><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Cancel">
+    </form>
+</body>
+</html>

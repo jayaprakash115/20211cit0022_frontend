@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta char="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Drawing App</title>
+ <style>
+        canvas {
+            border: 2px solid red;
+            cursor: pointer;
+            background: linear-gradient(to top, deeppink, gold);
+        }
+
+        #clear-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            background-color: white;
+            border: 1px solid black;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="600"></canvas>
+    <button id="clear-btn">Clear All</button>
+    <script>
+        const canvas = document.getElementById('canvas')
+        const ctx = canvas.getContext('2d')
+        let isDrawing = false
+
+        function startDrawing(e) {
+            isDrawing = true
+            ctx.beginPath()
+            ctx.moveTo(e.clientX, e.clientY)
+        }
+
+        function draw(e) {
+            if (!isDrawing) return
+            ctx.lineTo(e.clientX, e.clientY)
+            ctx.strokeStyle = 'yellow'
+            ctx.stroke()
+        }
+
+        function stopDrawing() {
+            isDrawing = false
+        }
+
+        canvas.addEventListener('mousedown', startDrawing)
+        canvas.addEventListener('mousemove', draw)
+        canvas.addEventListener('mouseup', stopDrawing)
+        canvas.addEventListener('mouseout', stopDrawing)
+
+        // Clear button functionality
+        const clearBtn = document.getElementById('clear-btn')
+        clearBtn.addEventListener('click', () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height)
+        })
+    </script>
+</body>
+</html>

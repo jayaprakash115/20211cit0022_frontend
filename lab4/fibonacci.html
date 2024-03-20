@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Numbers</title>
+</head>
+<body>
+    <h1>Fibonacci Numbers</h1>
+    <input type="number" id="num" min="1" value="10">
+    <button onclick="generateFibonacci()">Generate</button>
+    <p id="result"></p>
+
+    <script>
+        let input=document.getElementById("num");
+        let output=document.getElementById("result");
+        function generateFibonacci() {
+            var num =input.value;
+            var n1 = 0, n2 = 1, nextTerm;
+            var result = "";
+            for (var i = 1; i <= num; i++) {
+                if (i == 1) {
+                    result += n1 + "<br>";
+                    continue;
+                }
+                if (i == 2) {
+                    result += n2 + "<br>";
+                    continue;
+                }
+                nextTerm = n1 + n2;
+                n1 = n2;
+                n2 = nextTerm;
+                result += nextTerm + "<br>";
+            }
+            output.innerHTML = result;
+        }
+    </script>
+</body>
+</html>
