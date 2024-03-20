@@ -1,0 +1,319 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #171717;
+    transition: 1s;
+    user-select: none;
+    transition: 1s ease all;
+}
+a{
+    text-decoration: none;
+}
+/* scroll bar start */
+::-webkit-scrollbar {
+    width: 5px;
+  }  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  } 
+    ::-webkit-scrollbar-thumb {
+    height: 10px;
+    background-image: linear-gradient(to top,rgb(72, 243, 9),yellow,orange,red);
+    border-radius: 0px 0px 10px 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-image: linear-gradient(to bottom,rgb(72, 243, 9),yellow,orange,red);
+  }
+/* scroll bar end*/
+/* display: flex; */
+.nav ,.nav ul,.logo,.quote,.heading ,.menu .items,.item-details .checkout,footer{
+    display: flex;
+}
+/* text-transform: capitalize; */
+.nav ul li,.logo p,.quote h1,.menu h1,.item-details .title,.item-details .description,.item-details .checkout .price,.item-details .checkout .cart,.location-map p,.footer-social p,.footer-social a,.contact-us p{
+    text-transform: capitalize;
+}
+/* color:#fff; */
+.nav ul li,.logo p,.quote h1,.menu h1,.item-details .checkout .cart:hover,.location-map p,.footer-social p,.footer-social a,.contact-us p{
+    color: #fff;
+}
+/* nav */
+.nav{
+    justify-content: space-between;
+    padding: 10px 50px 0 30px;
+    background-color: #0000007a;
+}
+.nav img {
+    width: 70px;
+    height: 70px;
+}
+.nav ul{
+    gap: 50px;
+    line-height: 50px;
+}
+.nav ul li{
+    list-style: none;
+    font-size: 20px;
+}
+.logo p{
+    font-size: 30px;
+    margin-top: 15px;
+}
+.nav ul li a{
+    text-decoration: none;
+    border: 1px solid #fff;
+}
+.nav ul li a:hover{
+    text-decoration:underline;
+}
+/* nav */
+/* video */
+.main video{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit:fill;   
+}
+source{
+    z-index: -1;
+}
+/* video */
+/* video quote */
+.quote{
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    margin-left: 70px;
+}
+.quote h1{
+    font-size: 100px;
+    text-shadow: 0 0 10px #000;
+}
+.tasty{
+    margin-left: 100px;
+}
+/* video quote */
+/* items page */
+hr{
+    position: absolute;
+    width: 50px; 
+    height: 3px; 
+    background-color: white; 
+    align-items: center; 
+    border-radius: 30px; 
+    margin-left: 40px;
+}
+
+.menu{
+    height: 119.5vh;
+    position: relative;
+}
+
+.menu h1{
+    margin-top:150px;
+    font-size: 50px;
+    cursor: pointer;
+
+}
+.menu h1 i{
+    font-size: 25px;
+    transition: 1s;
+    
+}
+.menu h1:hover i{
+    transform: translateX(20px);
+    transition: 1s;
+
+
+}
+.heading{
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.menu .items{
+    margin-left: 30px;
+    gap: 21px;
+}
+.menu .items .item1{
+    background-color: #fff;
+    width: 275px;
+    margin-left: 5px;
+
+    height: 400px;
+    margin-top: 140px;
+    border-radius: 10px;
+    transition: 1s;
+    box-shadow: 0 0 15px #fff;
+}
+.menu .items .item1:hover{
+    transform: translateY(-20px);
+    transition: 1s;
+    box-shadow: 0 0 50px #1eff00;
+}
+.items .item1 img{
+    width: 275px;
+    height: 200px;
+    border-radius: 10px 10px 0px 0px ;
+}
+.item-details{
+    border-top:1px solid #000 ;
+    padding: 20px;
+}
+.item-details .title{
+    font-size: 25px;
+}
+.item-details .description{
+    font-size: 15px;
+    margin-top: 10px;
+    white-space: nowrap; 
+  width: 250px; 
+  height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+.item-details .checkout {
+    justify-content: space-between;
+}
+.item-details .checkout .price{
+    font-size: 20px;
+    margin-top: 20px;
+}
+.item-details .checkout .cart{
+    font-size: 15px;
+   margin-top: 10px;
+   margin-left: 10px;
+   border: 3px solid #000;
+   padding: 10px;
+   border-radius: 10px;
+   transition: .5s;
+}
+.item-details .checkout .cart:hover{
+    background-color: #000;
+   transition: .5s;
+   cursor: pointer;
+   transition: .5s;
+}
+ a{
+    color: #000;
+}
+.cart i{
+    display: none;
+    width: 70px;
+    height: 18px;
+    transition: .5s;
+    text-align: center;
+    transition: .5s;
+}
+.cart:hover i{
+    display: block;
+    transition: 1s;
+}
+.cart:hover span{
+    display: none;
+    transition: .5s;
+}
+/* items page */
+/* footer start*/
+footer{
+    background-color: #0000007a;
+    height: 420px;
+    width: 100%;
+    justify-content: space-between;
+}
+.location-map p{
+    font-size: 40px;
+    margin-left: 50px;
+    margin-top: 50px;
+    padding-top: 20px;
+    text-decoration: underline;
+}
+footer .location{
+    margin-left: 50px;
+    margin-top: 50px;
+    border-radius: 20px;
+}
+.footer-social{
+    margin-right: 50px;
+}
+.footer-social p{
+    margin-top: 80px;
+    font-size: 30px;
+    text-decoration: underline;
+}
+.footer-social a{
+    text-decoration: none;
+    list-style: none;
+    font-size: 20px;
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+    transition: 1s;
+}
+.footer-social ul{
+    margin-top: 30px;
+}
+.footer-social ul li{
+    margin-top: 20px;
+}
+.contact-us p{
+    margin-top: 80px;
+    font-size: 30px;
+    margin-left: -150px;
+    text-decoration: underline;
+}
+.footer-social ul a i{
+    margin-top: 23px;
+}
+.footer-social p{
+    margin-left: -40px;
+}
+.footer-social ul .link:first-child:hover{
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    margin-left: 25px;
+    transition: 1s;
+}
+.footer-social ul .link:nth-child(2):hover{
+    background: linear-gradient(to bottom, #4f75c7 0%, #3a61b5 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    margin-left: 25px;
+    transition: 1s;
+}
+.footer-social ul .link:nth-child(3):hover{
+    background:  linear-gradient(to right,#1DA1F2,#009ffc);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    margin-left: 25px;
+    transition: 1s;
+}
+.footer-social ul .link:nth-child(4):hover{
+    background:  linear-gradient(to right,#f2411d,#fc1900);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    margin-left: 25px;
+    transition: 1s;
+}
+/* footer ends*/
+.responsive{
+    display: none;
+}
+/* responsive */
+@media screen and (max-width:376px){
+    body{
+        background-color: #009ffc;
+    }
+    h1{
+        display: block;
+        position: relative;
+        color: #000;
+    }
+    video,.nav,.menu,.quote,footer{
+        display: none;
+    }
+}
